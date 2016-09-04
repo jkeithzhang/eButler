@@ -1,6 +1,6 @@
 <?php
 ####################################################################
-#	File Name	:	general.config.settings
+#	File Name	:	general.config.php
 #	Location	: 	/WEBROOT/configs/
 ####################################################################
 

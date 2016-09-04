@@ -11,13 +11,14 @@
 
 require ("../configs/general.config.php");
 require ("../configs/url.config.php");
-// placeholder for DB.config.php
-
+require ("../configs/db.config.php");
 // placeholder for util.php
 // placeholder for PHP MAILER
 // placeholder for MAIL TEMPLATES
 
 // DB connect:
+$dbObj = new dbConnect;
+$connect = $dbObj->connectDB();
 
 ?>
 <!DOCTYPE html>
