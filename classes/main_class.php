@@ -10,5 +10,8 @@ if (!defined('DOC_ROOT'))
 if (!defined('ERR_LOG_FILE'))
 	define("ERR_LOG_FILE", DOC_ROOT."err_log.txt");
 
+class dbClass {
+	
+}
 
 ?>
