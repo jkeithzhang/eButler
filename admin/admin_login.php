@@ -4,16 +4,17 @@
 #	Location	:	/WEBROOT/admin/
 ####################################################################
 
-require "templates/admin_header.php";
+require "templates/admin_login_header.php";
 
 ?>
 <div class="container">
   <div class="profile">
     <button class="profile__avatar" id="toggleProfile">
       <!-- https://www.abeautifulsite.net/how-to-make-rounded-images-with-css -->
-      <img src="assets/img/ke.jpg" alt="Avatar" /> 
+      <img src="assets/img/ke.png" alt="Avatar" /> 
     </button>
-    <div class="profile__form">
+
+    <form class="profile__form" name="secureLoginForm" id="secureLoginForm">
       <div class="profile__fields">
         <div class="field">
           <input type="text" id="fieldUser" class="input" required pattern=.*\S.* />
@@ -24,12 +25,12 @@ require "templates/admin_header.php";
           <label for="fieldPassword" class="label">Password</label>
         </div>
         <div class="profile__footer">
-          <button class="btn">Login</button>
+          <button class="btn" id="loginLink">Login</button>
         </div>
       </div>
-     </div>
+    </form>
   </div>
 </div>
 
 <!-- CONTENT-WRAPPER SECTION END-->
-<?php require "templates/admin_footer.php"; ?>
+<?php require "templates/admin_login_footer.php"; ?>

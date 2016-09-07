@@ -13,6 +13,10 @@ require ("../configs/general.config.php");
 require ("../configs/url.config.php");
 require ("../configs/db.config.php");
 // placeholder for util.php
+
+
+require ("../classes/main_class.php");
+
 // placeholder for PHP MAILER
 // placeholder for MAIL TEMPLATES
 

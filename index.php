@@ -2,5 +2,5 @@
 ####################################################################
 #	File Name:	index.php
 ####################################################################
-header("Location: admin/admin_index.php");
+header("Location: admin/admin_login.php");
 ?>
