@@ -20,8 +20,8 @@ class dbClass {
 		
 				$queryString	=	"";				
 				$resultCount	=	"";
-				$schemaPrfx		=	"tbl_";				
-				$schemaName		=	$schemaPrfx.$schemaName;
+				$schemaPrefix	=	"tbl_";				
+				$schemaName		=	$schemaPrefix.$schemaName;
 				
 				$queryString	=	"SELECT ".$columnsList. " FROM ".$schemaName;
 				
