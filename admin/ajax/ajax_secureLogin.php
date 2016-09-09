@@ -24,17 +24,24 @@ $todayDBDateTime =	date("Y-m-d H:i:s");
 
 if(isset($_POST['op_command']) && $_POST['op_command'] == "SECURE_LOGIN") {
 
-
 	$loginName			=	$_POST['loginName'];
 	$loginPwd			=	$_POST['loginPwd'];
-	
 	$targetSchema	=	"admin";
 	$loginCondition		=	"(user_name = '".$loginName."' AND password  = '".$loginPwd."')";
-
 	$checkAvailInfo		=	$mainClassObj->getSchemaInfo($targetSchema, "*", $loginCondition, "", "", "", "");
+	
 	$availCount			=	sizeof($checkAvailInfo);
 
-	$fileContents 	= file_get_contents(ERR_LOG_FILE);
-	file_put_contents(ERR_LOG_FILE, $fileContents . $availCount."\n");
+	if($availCount == 1) {
+		$fileContents 	= file_get_contents(ERR_LOG_FILE);
+		file_put_contents(ERR_LOG_FILE, $fileContents . "Successfully authenticate user!\n");
+	} else if ($availCount == 0) {
+		$fileContents 	= file_get_contents(ERR_LOG_FILE);
+		file_put_contents(ERR_LOG_FILE, $fileContents . "Failed authenticate user!\n");
+	} else {
+		$fileContents 	= file_get_contents(ERR_LOG_FILE);
+		file_put_contents(ERR_LOG_FILE, $fileContents . "Something weird happened!\n");		
+	}
 }
+
 ?>
