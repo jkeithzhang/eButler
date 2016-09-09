@@ -1,2 +1,2 @@
-Failed authenticate user!
+Successfully authenticate user!
 Successfully authenticate user!

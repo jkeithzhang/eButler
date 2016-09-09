@@ -18,11 +18,11 @@ require "templates/admin_login_header.php";
       <div class="profile__fields">
         <div class="field">
           <input type="text" name="loginName" id="loginName" class="input" required pattern=.*\S.* />
-          <label for="fieldUser" class="label">Username</label>
+          <label for="loginName" class="label">Username</label>
         </div>
         <div class="field">
           <input type="password" name="loginPwd" id="loginPwd" class="input" required pattern=.*\S.* />
-          <label for="fieldPassword" class="label">Password</label>
+          <label for="loginPwd" class="label">Password</label>
         </div>
         <div class="profile__footer">
           <button class="btn" id="loginLink">Login</button>

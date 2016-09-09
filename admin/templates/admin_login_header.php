@@ -34,8 +34,8 @@ $connect = $dbObj->connectDB();
 	        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	        <![endif]-->
 	<title>admin</title>
-	<link href="assets/css/login.css" rel="stylesheet" />
 	<base href="<?php echo ADMIN_URL;?>">
+	<link href="assets/css/login.css" rel="stylesheet" />
 </head>
 <body>
 <!-- HEADER END-->
