@@ -11,22 +11,30 @@ require ("../../configs/general.config.php");
 require ("../../configs/url.config.php");
 require ("../../classes/main_class.php");
 
-$dbObj  	=	new cdBConnect;
-$connect	=	$dbObj->connectDB();
+$dbObj = new dbConnect;
+$connect = $dbObj->connectDB();
 global $pdoConObj;
+$mainClassObj	=	new dbClass();
 
-$mainClassObj	=	new dBaseClass();
 session_start();
-$todayDBDateTime=	date("Y-m-d H:i:s");
+$todayDBDateTime =	date("Y-m-d H:i:s");
+
+// echo "SUCCESS";
+// exit;
 
 if(isset($_POST['op_command']) && $_POST['op_command'] == "SECURE_LOGIN") {
 
-	$loginEmail			=	$_POST['loginEmail'];
+
+	$loginName			=	$_POST['loginName'];
 	$loginPwd			=	$_POST['loginPwd'];
 	
-	$registrationSchema	=	"restaurant_owners";
-	$loginCondition		=	"(rest_email = '".$loginEmail."' AND rest_pwd  = '".$loginPwd."')";
-	$checkAvailInfo		=	$mainClassObj->getSchemaInfo($registrationSchema, "*", $loginCondition, "", "", "", "");
+	$targetSchema	=	"admin";
+	$loginCondition		=	"(user_name = '".$loginName."' AND password  = '".$loginPwd."')";
+
+	$checkAvailInfo		=	$mainClassObj->getSchemaInfo($targetSchema, "*", $loginCondition, "", "", "", "");
 	$availCount			=	sizeof($checkAvailInfo);
+
+	$fileContents 	= file_get_contents(ERR_LOG_FILE);
+	file_put_contents(ERR_LOG_FILE, $fileContents . $availCount."\n");
 }
 ?>

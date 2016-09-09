@@ -17,11 +17,11 @@ require "templates/admin_login_header.php";
     <form class="profile__form" name="secureLoginForm" id="secureLoginForm">
       <div class="profile__fields">
         <div class="field">
-          <input type="text" id="fieldUser" class="input" required pattern=.*\S.* />
+          <input type="text" name="loginName" id="loginName" class="input" required pattern=.*\S.* />
           <label for="fieldUser" class="label">Username</label>
         </div>
         <div class="field">
-          <input type="password" id="fieldPassword" class="input" required pattern=.*\S.* />
+          <input type="password" name="loginPwd" id="loginPwd" class="input" required pattern=.*\S.* />
           <label for="fieldPassword" class="label">Password</label>
         </div>
         <div class="profile__footer">

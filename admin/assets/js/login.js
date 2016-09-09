@@ -13,40 +13,35 @@ $(document).ready(function() {
 
 function processSecureLogin(keyCode) {
 	var loginValidated	=	true;
-	var loginEmail		= 	$.trim($("#loginEmail").val());
+	var loginEmail		= 	$.trim($("#loginName").val());
 	var loginPwd		= 	$.trim($("#loginPwd").val());
-	var actualTotal		=	parseInt($('.rand1').html())+parseInt($('.rand2').html());
-	var sumResult		=	$('#sumResult').val();
 	var alertMsg		=	"";
-	if(loginValidated)
-	{
+	if(loginValidated) {
 		//ajaxResponse
 		var plainPwd	=	$("#loginPwd").val();
 		var encPwd 		=	$.md5(plainPwd);
 		$("#loginPwd").val(encPwd);	
-		
-		var formData = new FormData($("#secureLoginForm")[0]);
-		formData.append("op_command", "SECURE_LOGIN");
-		
+		console.log($("#secureLoginForm").serialize());
 		$.ajax({
 			type: "POST",
-			url: "ajax/ajx_secureLogin.php",
+			url: "ajax/ajax_secureLogin.php",
 			data: $("#secureLoginForm").serialize() + "&op_command=SECURE_LOGIN",
 			success: function(ajaxResponse) {	
-					var loginResponse	=	($.trim(ajaxResponse));
-					var responseAlert	=	"";
-					if(loginResponse == 'SUCCESS') {
-						$(location).attr('href' ,'restaurant_owner_home.php');
-						//$('#secureLoginForm').attr('action', 'restaurant_owner_home.php');
-					}
-					else {
-						
-					}
-				},//success
+				var loginResponse	=	($.trim(ajaxResponse));
+				var responseAlert	=	"";
+				if(loginResponse == 'SUCCESS') {
+					$(location).attr('href' ,'admin_home.php');
+					//$('#secureLoginForm').attr('action', 'restaurant_owner_home.php');
+				}
+				else {
+					
+				}
+			},//success
+			error: function() {
+				console.log('err');
+			}
 		});	//ajax
-	}
-	else
-	{
+	} else {
 		bootbox.alert(alertMsg, function() {	});	
 	}
 }
