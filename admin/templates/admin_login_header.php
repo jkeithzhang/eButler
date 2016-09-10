@@ -1,6 +1,6 @@
 <?php
 ####################################################################
-#	File Name	:	admin_header.php
+#	File Name	:	admin_login_header.php
 #	Location	:	/WEBROOT/admin/templates/
 ####################################################################
 
@@ -23,6 +23,16 @@ require ("../classes/main_class.php");
 // DB connect:
 $dbObj = new dbConnect;
 $connect = $dbObj->connectDB();
+$logObj = new logClass();
+
+
+// session_unset();
+
+if(isset($_SESSION['EBUTLER'])) {
+	$logObj->printLog(['EBUTLER']['USER_ID']);
+	header("Location: admin_home.php");
+	exit(0);
+}
 
 ?>
 <!DOCTYPE html>

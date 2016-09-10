@@ -1,6 +1,6 @@
 <?php
 ####################################################################
-#	File Name	:	admin_footer.php
+#	File Name	:	admin_login_footer.php
 #	Location	:	/WEBROOT/templates/
 ####################################################################
 ?>

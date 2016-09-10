@@ -1,10 +1,10 @@
 <?php
 ####################################################################
-#	File Name	:	admin.php
+#	File Name	:	admin_home.php
 #	Location	:	/WEBROOT/admin/
 ####################################################################
 
-require "templates/admin_header.php";
+require "templates/admin_home_header.php";
 
 ?>
 <div class="container">
@@ -14,4 +14,4 @@ require "templates/admin_header.php";
 </div>
 
 <!-- CONTENT-WRAPPER SECTION END-->
-<?php require "templates/admin_login_footer.php"; ?>
+<?php require "templates/admin_home_footer.php"; ?>

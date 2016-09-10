@@ -32,6 +32,9 @@ if(isset($_POST['op_command']) && $_POST['op_command'] == "SECURE_LOGIN") {
 	$availCount			=	sizeof($checkAvailInfo);
 
 	if($availCount == 1) {
+		$_SESSION['EBUTLER'] = array(
+			'USER_ID' => $loginName
+		);	
 		$logObj->printLog("Successfully authenticate user!");
 		echo "SUCCESS";
 	} else if ($availCount == 0) {
