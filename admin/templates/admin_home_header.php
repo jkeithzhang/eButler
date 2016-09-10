@@ -25,11 +25,9 @@ $dbObj = new dbConnect;
 $connect = $dbObj->connectDB();
 $logObj = new logClass();
 
-
 // session_unset();
-
 if(isset($_SESSION['EBUTLER'])) {
-	$logObj->printLog(['EBUTLER']['USER_ID']);
+	$logObj->printLog($_SESSION['EBUTLER']['USER_ID']);
 } else {
 	header("Location: admin_login.php");
 	exit(0);
