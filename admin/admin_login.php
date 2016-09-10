@@ -1,10 +1,10 @@
 <?php
 ####################################################################
-#	File Name	:	admin_index.php
+#	File Name	:	admin_login.php
 #	Location	:	/WEBROOT/admin/
 ####################################################################
 
-require "templates/admin_login_header.php";
+require "templates/admin_header.php";
 
 ?>
 <div class="container">

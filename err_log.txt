@@ -1,1 +1,4 @@
 Successfully authenticate user!
+Successfully authenticate user!
+Successfully authenticate user!
+First record.

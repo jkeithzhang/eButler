@@ -16,7 +16,7 @@ class logClass {
 	**********************************************************************/
 	public function printLog($info) {
 		$exist_content = file_get_contents(ERR_LOG_FILE);
-		file_put_contents(ERR_LOG_FILE, $exist_content . $info . "\n");
+		file_put_contents(ERR_LOG_FILE, $info . "\n" . $exist_content);
 	}
 }
 

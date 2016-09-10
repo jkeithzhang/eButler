@@ -53,9 +53,8 @@ class dbClass {
 			$errorMessage	.=	"\n CODE :".$e->getCode();
 			$errorMessage	.=	"\n FILE :".$e->getFile();
 			$errorMessage	.=	"\n LINE :".$e->getLine();
-			
-			$fileContents 	= file_get_contents(ERR_LOG_FILE);
-			file_put_contents(ERR_LOG_FILE, $errorMessage.$fileContents);
+
+			$logObj->printLog($errorMessage);
 			//error_log($errorMessage, 3, ERR_LOG_FILE);
 		}
 
