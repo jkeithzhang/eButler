@@ -5,7 +5,7 @@
 ####################################################################
 
 // ob_start();
-// session_start();
+session_start();
 // error_reporting(E_ALL);
 // ini_set("dispay_errors", "on");
 
@@ -36,6 +36,7 @@ $connect = $dbObj->connectDB();
 	<title>admin</title>
 	<base href="<?php echo ADMIN_URL;?>">
 	<link href="assets/css/login.css" rel="stylesheet" />
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css" />
 </head>
 <body>
 <!-- HEADER END-->
