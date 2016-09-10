@@ -9,20 +9,17 @@
 require ("../../configs/db.config.php");
 require ("../../configs/general.config.php");
 require ("../../configs/url.config.php");
+require ("../../classes/log_class.php");
 require ("../../classes/main_class.php");
 
 $dbObj = new dbConnect;
 $connect = $dbObj->connectDB();
 global $pdoConObj;
-$mainClassObj	=	new dbClass();
+$logObj = new logClass();
+$mainClassObj =	new dbClass();
 
 session_start();
 $todayDBDateTime =	date("Y-m-d H:i:s");
-
-
-		// $fileContents 	= file_get_contents(ERR_LOG_FILE);
-		// file_put_contents(ERR_LOG_FILE, $fileContents . "Successfully authenticate user!\n");
-		// echo "SUCCESS";
 
 if(isset($_POST['op_command']) && $_POST['op_command'] == "SECURE_LOGIN") {
 
@@ -35,16 +32,14 @@ if(isset($_POST['op_command']) && $_POST['op_command'] == "SECURE_LOGIN") {
 	$availCount			=	sizeof($checkAvailInfo);
 
 	if($availCount == 1) {
-		$fileContents 	= file_get_contents(ERR_LOG_FILE);
-		file_put_contents(ERR_LOG_FILE, $fileContents . "Successfully authenticate user!\n");
+		$logObj->printLog("Successfully authenticate user!");
 		echo "SUCCESS";
 	} else if ($availCount == 0) {
-		$fileContents 	= file_get_contents(ERR_LOG_FILE);
-		file_put_contents(ERR_LOG_FILE, $fileContents . "Failed authenticate user!\n");
+		$logObj->printLog("Failed authenticate user!");
 	} else {
-		$fileContents 	= file_get_contents(ERR_LOG_FILE);
-		file_put_contents(ERR_LOG_FILE, $fileContents . "Something weird happened!\n");
+		$logObj->printLog("Something weird happened!");
 	}
+
 }
 
 ?>
