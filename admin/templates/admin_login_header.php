@@ -29,9 +29,8 @@ $logObj = new logClass();
 // session_unset();
 
 if(isset($_SESSION['EBUTLER'])) {
-	$logObj->printLog(['EBUTLER']['USER_ID']);
+	$logObj->printLog($_SESSION['EBUTLER']['USER_ID']);
 	header("Location: admin_home.php");
-	exit(0);
 }
 
 ?>
