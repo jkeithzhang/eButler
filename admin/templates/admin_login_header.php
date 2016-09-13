@@ -43,7 +43,7 @@ if(isset($_SESSION['EBUTLER'])) {
 	<title>admin</title>
 	<base href="<?php echo ADMIN_URL;?>">
 	<link href="assets/css/login.css" rel="stylesheet" />
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css" />
+	<link rel="stylesheet" href="assets/css/bootstrap.css" type="text/css" />
 </head>
 <body>
 <!-- HEADER END-->

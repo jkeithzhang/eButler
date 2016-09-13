@@ -27,6 +27,7 @@ $logObj = new logClass();
 
 $now = time();
 
+// session_unset($_SESSION['EBUTLER']);
 if(!isset($_SESSION['EBUTLER']) || $now > $_SESSION['EBUTLER']['DISCARD_AFTER']) {
 	session_unset($_SESSION['EBUTLER']);
 	header("Location: admin_login.php");
@@ -44,8 +45,8 @@ if(!isset($_SESSION['EBUTLER']) || $now > $_SESSION['EBUTLER']['DISCARD_AFTER'])
 	        <![endif]-->
 	<title>admin</title>
 	<base href="<?php echo ADMIN_URL;?>">
-	<link href="assets/css/login.css" rel="stylesheet" />
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css" />
+	<link rel="stylesheet" href="assets/css/test.css" type="text/css" />
 </head>
 <body>
 <!-- HEADER END-->

@@ -1,0 +1,12 @@
+html {
+	background-color: #08538B;
+}
+body { 
+	padding-top: 70px; 
+}
+.container-fluid {
+	padding-left: 10%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #08538B;
+}

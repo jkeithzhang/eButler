@@ -7,17 +7,28 @@
 require "templates/admin_home_header.php";
 
 ?>
+
 <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    
+  <div class="container-fluid">
+      <img src="assets/img/logo.png" alt="Avatar"/> 
   </div>
 </nav>
-
 <div class="container">
-  <div>
-    <h1>admin home page</h1>
-  </div>
+	<h1>Page Content</h1>
+	<h1>Page Content</h1>
+	<h1>Page Content</h1>
+	<h1>Page Content</h1>
+	<h1>Page Content</h1>
+	<h1>Page Content</h1>
+	<h1>Page Content</h1>
+	<h1>Page Content</h1>
+	<h1>Page Content</h1>
+	<h1>Page Content</h1>
+	<h1>Page Content</h1>
+	<h1>Page Content</h1>
+	<h1>Page Content</h1>
+	<h1>Page Content</h1>
+	<h1>Page Content</h1>
 </div>
-
 <!-- CONTENT-WRAPPER SECTION END-->
 <?php require "templates/admin_home_footer.php"; ?>
