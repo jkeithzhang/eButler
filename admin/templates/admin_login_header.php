@@ -25,10 +25,7 @@ $dbObj = new dbConnect;
 $connect = $dbObj->connectDB();
 $logObj = new logClass();
 
-
-// session_unset();
 $now = time();
-// echo $now;
 if(isset($_SESSION['EBUTLER'])) {
 	$logObj->printLog($_SESSION['EBUTLER']['USER_ID']);
 	header("Location: admin_home.php");

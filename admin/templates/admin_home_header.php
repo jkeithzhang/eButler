@@ -33,15 +33,6 @@ if(!isset($_SESSION['EBUTLER']) || $now > $_SESSION['EBUTLER']['DISCARD_AFTER'])
 	exit(0);
 }
 
-// if(isset($_SESSION['EBUTLER']) && $now < $_SESSION['EBUTLER']['DISCARD_AFTER']) ) {
-// 	$logObj->printLog($_SESSION['EBUTLER']['USER_ID']);
-// } else {
-// 	session_unset();
-//     // session_destroy();
-// 	header("Location: admin_login.php");
-// 	// exit(0);
-// }
-
 ?>
 <!DOCTYPE html>
 <head>

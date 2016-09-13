@@ -35,7 +35,7 @@ if(isset($_POST['op_command']) && $_POST['op_command'] == "SECURE_LOGIN") {
 		$now = time();
 		$_SESSION['EBUTLER'] = array(
 			'USER_ID' => $loginName,
-			'DISCARD_AFTER' => $now + 10
+			'DISCARD_AFTER' => $now + 20
 		);	
 		$logObj->printLog("Successfully authenticate user!");
 		echo "SUCCESS";
