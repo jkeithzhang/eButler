@@ -25,13 +25,22 @@ $dbObj = new dbConnect;
 $connect = $dbObj->connectDB();
 $logObj = new logClass();
 
-// session_unset();
-if(isset($_SESSION['EBUTLER'])) {
-	$logObj->printLog($_SESSION['EBUTLER']['USER_ID']);
-} else {
+$now = time();
+
+if(!isset($_SESSION['EBUTLER']) || $now > $_SESSION['EBUTLER']['DISCARD_AFTER']) {
+	session_unset($_SESSION['EBUTLER']);
 	header("Location: admin_login.php");
 	exit(0);
 }
+
+// if(isset($_SESSION['EBUTLER']) && $now < $_SESSION['EBUTLER']['DISCARD_AFTER']) ) {
+// 	$logObj->printLog($_SESSION['EBUTLER']['USER_ID']);
+// } else {
+// 	session_unset();
+//     // session_destroy();
+// 	header("Location: admin_login.php");
+// 	// exit(0);
+// }
 
 ?>
 <!DOCTYPE html>

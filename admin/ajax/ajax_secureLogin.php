@@ -25,15 +25,17 @@ if(isset($_POST['op_command']) && $_POST['op_command'] == "SECURE_LOGIN") {
 
 	$loginName			=	$_POST['loginName'];
 	$loginPwd			=	$_POST['loginPwd'];
-	$targetSchema	=	"admin";
+	$targetSchema		=	"admin";
 	$loginCondition		=	"(user_name = '".$loginName."' AND password  = '".$loginPwd."')";
 	$checkAvailInfo		=	$mainClassObj->getSchemaInfo($targetSchema, "*", $loginCondition, "", "", "", "");
 	
 	$availCount			=	sizeof($checkAvailInfo);
 
 	if($availCount == 1) {
+		$now = time();
 		$_SESSION['EBUTLER'] = array(
-			'USER_ID' => $loginName
+			'USER_ID' => $loginName,
+			'DISCARD_AFTER' => $now + 10
 		);	
 		$logObj->printLog("Successfully authenticate user!");
 		echo "SUCCESS";
