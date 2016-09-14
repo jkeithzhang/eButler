@@ -46,7 +46,7 @@ if(!isset($_SESSION['EBUTLER']) || $now > $_SESSION['EBUTLER']['DISCARD_AFTER'])
 	<title>admin</title>
 	<base href="<?php echo ADMIN_URL;?>">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css" />
-	<link rel="stylesheet" href="assets/css/test.css" type="text/css" />
+	<link rel="stylesheet" href="assets/css/admin_home.css" type="text/css" />
 </head>
 <body>
 <!-- HEADER END-->
