@@ -1,3 +1,30 @@
+/******************* Flashy NEWS Robbin **********************/
+.alert:hover #test {
+  animation:myfirst .8s linear infinite;
+  -moz-animation:myfirst .8s linear infinite; /* Firefox */
+  -webkit-animation:myfirst .8s linear infinite; /* Safari and Chrome */
+  -o-animation:myfirst .8s linear infinite; /* Opera */
+}
+@keyframes myfirst {
+  0%,100%   {color:red;}
+  50% {color:#333;}
+}
+/* Firefox */
+@-moz-keyframes myfirst {
+  0%,100%   {color:red;}
+  50% {color:#333;}
+}
+/* Safari and Chrome */
+@-webkit-keyframes myfirst {
+  0%,100%   {color:red;}
+  50% {color:#333;}
+}
+/* Opera */
+@-o-keyframes myfirst {
+  0%,100%   {color:red;}
+  50% {color:#333;}
+}
+/******************* Flashy NEWS Robbin **********************/
 html {
 	background-color: #08538B;
 }
@@ -27,6 +54,9 @@ body {
 	padding: 10px;
 	margin-top: 15px;
 	margin-bottom: 15px;
+  -webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow:    3px 3px 3px 0px rgba(0,0,0,0.5);
+  box-shadow:         3px 3px 3px 0px rgba(0,0,0,0.5);
 }
 .main-component img {
 	display: block;	
@@ -38,14 +68,17 @@ body {
    	width: 70%;
 }
 .main-component:hover {
-	transition: 0.8s;
-	background-color: #666666;
+	transition: 0.5s;
+	/*background-color: #666666;*/
 	cursor: pointer;
+  -webkit-box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow:    8px 8px 8px 0px rgba(0,0,0,0.5);
+  box-shadow:         8px 8px 8px 0px rgba(0,0,0,0.5);
 }
 /******************* Corner Ribbon **********************/
 /*https://css-tricks.com/snippets/css/corner-ribbon/*/
 .wrapper {
-  background: white;
+  background: #ffe6e6;
   border-radius: 10px;
   -webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
   -moz-box-shadow:    0px 0px 8px rgba(0,0,0,0.3);
@@ -101,6 +134,8 @@ body {
 .ribbon-green:before {
   left: 0;
 }
+
 .ribbon-green:after {
   right: 0;
 }​
+/******************* Corner Ribbon **********************/
