@@ -11,19 +11,22 @@ if(isset($_REQUEST['option']) && $_REQUEST['option'] != "") {
 }
 
 switch($option_name) {
-	case 'finance':			
-					$include_php			=	"finance.php";		
-					$page_title				=	"My Finance";			
+	case 'photo':			
+					$include_page			=	"photo_wall.php";		
+					$page_title				=	"Photo Wall";			
 					break;
+	case 'web':			
+					$include_page			=	"web_library.php";		
+					$page_title				=	"Photo Wall";			
+					break;	
 	default:				
-					$include_php			=	"finance.php";		
+					$include_page			=	"finance.php";		
 					$page_title				=	"My Finance";			
 					break;
 }
 
-// echo ">>>" . $include_php;
+// echo ">>>" . $include_page;
 ?>
-
 <nav class="navbar navbar-default navbar-fixed-top">
  	<div class="container-fluid">
     	<img src="assets/img/logo.png" alt="Avatar"/> 
@@ -48,7 +51,7 @@ switch($option_name) {
   	<div class="row">
     	<div class="col-md-3 col-sm-6 col-xs-12">
     		<div class="main-component" >
-    			<a href="admin_home.php?option=finance">
+    			<a href="admin_finance.php">
     				<img src="assets/img/linechart.png" alt="Finance"/>
     			</a>
     		</div>
@@ -56,7 +59,7 @@ switch($option_name) {
     	<div class="col-md-3 col-sm-6 col-xs-12">
     		<div class="main-component" >
     			<a href="admin_home.php?option=photo">
-    				<img src="assets/img/gallery.png" alt="Photos"/>
+    				<img src="assets/img/gallery.png" alt="Photo"/>
     			</a>
     		</div>
     	</div>
@@ -82,6 +85,8 @@ switch($option_name) {
     		</div>
     	</div>
   	</div>
+
+  	<?php require "partials/".$include_page; ?>
 </div>
 <!-- CONTENT-WRAPPER SECTION END-->
 <?php require "templates/admin_home_footer.php"; ?>
