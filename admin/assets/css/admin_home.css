@@ -24,6 +24,18 @@
   0%,100%   {color:red;}
   50% {color:#333;}
 }
+/************************ Web Form ***************************/
+#web_div {
+  margin-top:5em;
+  margin-bottom: 5em;
+  background-color:#efefef;
+}
+
+#web_form {
+  padding: 20px;
+}
+/********************** Web Form End *************************/
+
 /******************* Flashy NEWS Robbin **********************/
 html {
 	background-color: #08538B;
@@ -139,16 +151,3 @@ body {
   right: 0;
 }​
 /******************* Corner Ribbon End **********************/
-
-/*********************** Web Panel **************************/
-#web {}
-
-
-
-
-
-
-
-
-
-

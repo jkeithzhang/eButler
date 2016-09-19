@@ -11,6 +11,50 @@ if (!defined('ERR_LOG_FILE'))
 	define("ERR_LOG_FILE", DOC_ROOT."err_log.txt");
 
 class dbClass {
+
+	 /**********************************************************************
+	 # FUNCTION TO INSERT INTO A SCHEMA
+	 **********************************************************************/
+	 public function insertSchema($schemaName, $fieldsList, $valuesList)
+	 {
+		try
+		{ 
+			global $pdoConObj;
+
+			$queryString	=	"";
+			$schemaPrfx		=	"tbl_";
+			$schemaName		=	$schemaPrfx.$schemaName;
+			$errorMessage	=	"";
+			$insertedID		=	"";
+			
+			$insertQry		=	"INSERT INTO {$schemaName} ($fieldsList) VALUES ($valuesList)";
+			//echo "Query String :".$insertQry;
+			$insertStatement=	$pdoConObj->prepare($insertQry);
+			$insertStatement->execute();
+			$insertedID	   .=	$pdoConObj->lastInsertId();
+		}
+		catch(PDOException $e)
+		{
+			$errorMessage	.= "\n***************************************";
+			$errorMessage	.=  "\n Error Date :".date("M-j-Y D, h:i:s A");
+			$errorMessage	.=	"\n Error While executing  INSERT Query Over :".$schemaName;
+			$errorMessage	.=	"\n QUERY :: ".$insertQry;
+			$errorMessage	.=	"\n MESSAGE :".$e->getMessage();
+			$errorMessage	.=	"\n CODE :".$e->getCode();
+			$errorMessage	.=	"\n FILE :".$e->getFile();
+			$errorMessage	.=	"\n LINE :".$e->getLine();
+			
+			$logObj->printLog($errorMessage);
+			//error_log($errorMessage, 3, ERR_LOG_FILE);
+		}
+		
+		if($insertedID)
+			return $insertedID;
+		else
+			return 0;
+			
+	}
+
 	/**********************************************************************
 	 # FUNCTION TO RETRIEVE INFORMATION FROM A SCHEMA
 	**********************************************************************/

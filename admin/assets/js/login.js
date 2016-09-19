@@ -48,7 +48,7 @@ function processSecureLogin(keycode) {
 				success: function(ajaxResponse) {	
 					var loginResponse	=	($.trim(ajaxResponse));
 					if(loginResponse == 'SUCCESS') {
-						alert("success");
+						alert("login success");
 						$(location).attr('href', 'admin_home.php');
 					} else {
 						//...

@@ -23,6 +23,7 @@ require ("../classes/main_class.php");
 // DB connect:
 $dbObj = new dbConnect;
 $connect = $dbObj->connectDB();
+$mainClassObj =	new dbClass();
 $logObj = new logClass();
 
 $now = time();
@@ -47,6 +48,7 @@ if(!isset($_SESSION['EBUTLER']) || $now > $_SESSION['EBUTLER']['DISCARD_AFTER'])
 	<base href="<?php echo ADMIN_URL;?>">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css" />
 	<link rel="stylesheet" href="assets/css/admin_home.css" type="text/css" />
+	<link rel="stylesheet" href="assets/css/select2.min.css" type="text/css" />
 </head>
 <body>
 <!-- HEADER END-->

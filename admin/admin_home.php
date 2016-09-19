@@ -26,6 +26,12 @@ switch($option_name) {
 }
 
 // echo ">>>" . $include_page;
+
+# List Of Schemas
+$webTypes = "web_types";
+
+$web_types = $mainClassObj->getSchemaInfo($webTypes, "*", "", "", "", "", "");
+
 ?>
 <nav class="navbar navbar-default navbar-fixed-top">
  	<div class="container-fluid">
