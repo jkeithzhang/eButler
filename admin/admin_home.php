@@ -12,16 +12,17 @@ if(isset($_REQUEST['option']) && $_REQUEST['option'] != "") {
 
 switch($option_name) {
 	case 'photo':			
-					$include_page			=	"photo_wall.php";		
+					$include_flag           =   true;
+                    $include_page			=	"photo_wall.php";		
 					$page_title				=	"Photo Wall";			
 					break;
 	case 'web':			
-					$include_page			=	"web_library.php";		
+					$include_flag           =   true;
+                    $include_page			=	"web_library.php";		
 					$page_title				=	"Photo Wall";			
 					break;	
 	default:				
-					$include_page			=	"finance.php";		
-					$page_title				=	"My Finance";			
+                    $include_flag           =   false;	
 					break;
 }
 
@@ -40,6 +41,7 @@ $web_types = $mainClassObj->getSchemaInfo($webTypes, "*", "", "", "", "", "");
 </nav>
 <div class="container">
 	<div class="row">
+        <!-- <a id="link">click me to scroll to id3</a><br> -->
     	<div class="col-md-8 col-sm-8 col-xs-8">
     		<div class="alert wrapper">
     			<div class="ribbon-wrapper-green">
@@ -78,7 +80,7 @@ $web_types = $mainClassObj->getSchemaInfo($webTypes, "*", "", "", "", "", "");
     	</div>
     	<div class="col-md-3 col-sm-6 col-xs-12">
     		<div class="main-component" >
-    			<a href="admin_home.php?option=web">
+    			<a id="to_webform" href="admin_home.php?option=web">
     				<img src="assets/img/web.png" alt="Userful Links"/>
     			</a>	
     		</div>
@@ -91,8 +93,11 @@ $web_types = $mainClassObj->getSchemaInfo($webTypes, "*", "", "", "", "", "");
     		</div>
     	</div>
   	</div>
-
-  	<?php require "partials/".$include_page; ?>
+  	<?php
+        if($include_flag) {
+             require "partials/".$include_page;
+        } 
+     ?>
 </div>
 <!-- CONTENT-WRAPPER SECTION END-->
 <?php require "templates/admin_home_footer.php"; ?>

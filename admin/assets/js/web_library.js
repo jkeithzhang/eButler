@@ -3,14 +3,24 @@ $(document).ready(function() {
 		addToWeb(13);	
 	});
 
-	$("#secureLoginForm input").keypress(function(e) {
+	$("#web_form input").keypress(function(e) {
 	    if (e.which == 13) {
 	        event.preventDefault();
 	        addToWeb(13);	
 	    }
 	});
+
+	$("#to_webform").click(function() {
+	   scrollToAnchor('id3');
+	});
+
 });
 $('#web_category_select').select2();
+
+function scrollToAnchor(aid) {
+    var aTag = $("a[name='"+ aid +"']");
+    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+}
 
 function addToWeb(keycode) {
 	if(keycode == 13) {
