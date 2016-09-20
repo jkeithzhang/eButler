@@ -22,7 +22,7 @@ session_start();
 $todayDBDateTime =	date("Y-m-d H:i:s");
 
 $web_table = "web_library";
-$web_table_fields = "uri, category, note";
+$web_table_fields = "uri, category, note, created_at";
 // echo json_encode(json_encode($_POST));
 
 if(isset($_POST['uri'])) {
@@ -31,7 +31,7 @@ if(isset($_POST['uri'])) {
 	$categories		=	$_POST['webCategories'];
 	
 	foreach($_POST['webCategories'] as $key => $value) {
-		$value_list = "'".$_POST['uri']."', '".$value."', '".$_POST['note']."'";
+		$value_list = "'".$_POST['uri']."', '".$value."', '".$_POST['note']."', now()";
 		$mainClassObj->insertSchema($web_table, $web_table_fields, $value_list);
 	}
 

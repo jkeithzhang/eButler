@@ -21,19 +21,17 @@ function addToWeb(keycode) {
 		$('#web_category_select :selected').each(function(i, selected){ 
 		  webCategories[i] = $(selected).text(); 
 		});	
-
-		var alertMsg = "";		
+		// var alertMsg = "";		
 		if(uri == "") {
 			inputValidated = false;
-			alertMsg	+= "<br>";
-			alertMsg	+=	"<font color='red'>&raquo; URI Required.</font>";
+			// alertMsg	+= "<br>";
+			// alertMsg	+=	"<font color='red'>&raquo; URI Required.</font>";
 		}
 		if(webCategories.length == 0) {
 			inputValidated = false;
-			alertMsg	+= "<br>";
-			alertMsg	+=	"<font color='red'>&raquo; Categories Required.</font>";
+			// alertMsg	+= "<br>";
+			// alertMsg	+=	"<font color='red'>&raquo; Categories Required.</font>";
 		}	
-
 		if(inputValidated) {
 			$.ajax({
 				type: "POST",
@@ -53,8 +51,7 @@ function addToWeb(keycode) {
 					}
 				}
 			});	//ajax
-		} else {
-			bootbox.alert(alertMsg, function() {	});	
 		}
+		//else handled by form attribute "required"
 	}
 }
