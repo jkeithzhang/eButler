@@ -42,7 +42,6 @@ function addToWeb(keycode) {
 					note: note
 				},
 				success: function(ajaxResponse) {	
-					alert('wtf');
 					var addResponse	=	($.trim(ajaxResponse));
 					if(addResponse == 'SUCCESS') {
 						$(location).attr('href', 'admin_home.php');
