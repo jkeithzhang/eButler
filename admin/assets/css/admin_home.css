@@ -1,5 +1,10 @@
+#main_component_guide {
+    margin-top: 3em;
+    margin-bottom: 0em;
+}
+
 /******************* Flashy NEWS Robbin **********************/
-.alert:hover #test {
+.news:hover #test {
   animation:myfirst .8s linear infinite;
   -moz-animation:myfirst .8s linear infinite; /* Firefox */
   -webkit-animation:myfirst .8s linear infinite; /* Safari and Chrome */
@@ -26,13 +31,48 @@
 }
 /************************ Web Form ***************************/
 #web_div {
-  margin-top:5em;
+  margin-top: 5em;
   margin-bottom: 5em;
-  background-color:#efefef;
+  background-color: #efefef;
+  padding: 20px;
 }
 
-#web_form {
-  padding: 20px;
+#recent_uri_container {
+  min-height: 200px;
+  margin-top: 1em;
+  background-color: white;
+}
+
+#recent_add_header {
+  color: blue;
+}
+
+.foot {
+    position:fixed;
+    /*width: 600px;*/
+    z-index: 10000;
+    text-align:center;
+    height: 100%;
+    /*font-size:18px;*/
+    /*color: #000;*/
+    background: #FFF;
+    display: flex;
+    justify-content: top; /* align horizontal */
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    bottom: -100%;
+}
+
+.slide-up {
+    bottom: 0px !important;
+}
+
+.slide-down {
+    bottom: -475px !important;
 }
 /********************** Web Form End *************************/
 
@@ -49,13 +89,13 @@ body {
 	padding-bottom: 10px;
 	background-color: #08538B;
 }
-.alert {
+.news {
 	margin-top: 20px;
 	min-height: 200px;
 	background-color: #ffe6e6;
 	padding: 20px;
 }
-.alert p {
+.news p {
 	font-size: 20px;
 	color: #aaa;
 	font-family: Georgia, Serif;

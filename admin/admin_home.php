@@ -10,28 +10,29 @@ if(isset($_REQUEST['option']) && $_REQUEST['option'] != "") {
 	$option_name = $_REQUEST['option'];
 }
 
+# List Of Schemas
+$webTypes = "web_types";
+$webLib = "web_library";
+
 switch($option_name) {
 	case 'photo':			
 					$include_flag           =   true;
-                    $include_page			=	"photo_wall.php";		
+                    $include_page			=   "photo_wall.php";		
 					$page_title				=	"Photo Wall";			
 					break;
 	case 'web':			
 					$include_flag           =   true;
                     $include_page			=	"web_library.php";		
-					$page_title				=	"Photo Wall";			
+					$page_title				=	"Photo Wall";	
+                    $web_types              =   $mainClassObj->getSchemaInfo($webTypes, "*", "", "", "", "", "");
+                    $recently_added         =   $mainClassObj->getSchemaInfo($webLib, "*", "", "", "", "", "");
 					break;	
 	default:				
                     $include_flag           =   false;	
 					break;
 }
 
-// echo ">>>" . $include_page;
-
-# List Of Schemas
-$webTypes = "web_types";
-
-$web_types = $mainClassObj->getSchemaInfo($webTypes, "*", "", "", "", "", "");
+// echo ">>>" . json_encode($recently_added);
 
 ?>
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -41,9 +42,8 @@ $web_types = $mainClassObj->getSchemaInfo($webTypes, "*", "", "", "", "", "");
 </nav>
 <div class="container">
 	<div class="row">
-        <!-- <a id="link">click me to scroll to id3</a><br> -->
     	<div class="col-md-8 col-sm-8 col-xs-8">
-    		<div class="alert wrapper">
+    		<div class="news wrapper">
     			<div class="ribbon-wrapper-green">
     				<div class="ribbon-green" id="test">NEWS</div>
     			</div>
@@ -51,11 +51,18 @@ $web_types = $mainClassObj->getSchemaInfo($webTypes, "*", "", "", "", "", "");
     		</div>
     	</div>
     	<div class="col-md-4 col-sm-4 col-xs-4">
-    		<div class="alert">
+    		<div class="news">
     			<div> color change test </div>
     		</div>
     	</div>
   	</div>
+    <div class="row">
+        <div class="alert alert-info col-md-8 col-sm-8 col-xs-8" id="main_component_guide">
+            <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>
+            <span class="sr-only">Hint:</span>
+                &nbsp;Double click on module below
+        </div>
+    </div>
   	<div class="row">
     	<div class="col-md-3 col-sm-6 col-xs-12">
     		<div class="main-component" >
@@ -98,6 +105,10 @@ $web_types = $mainClassObj->getSchemaInfo($webTypes, "*", "", "", "", "", "");
              require "partials/".$include_page;
         } 
      ?>
+    <div class="foot">
+        <iframe src="" class="col-xs-12 analyze-result-window"></iframe>
+        <span class="glyphicon glyphicon-chevron-down analyze-close" aria-hidden="true" style="position: absolute; right: 50px; top: 20px; font-size: 30px; cursor: pointer;"></span>
+    </div>
 </div>
 <!-- CONTENT-WRAPPER SECTION END-->
 <?php require "templates/admin_home_footer.php"; ?>
