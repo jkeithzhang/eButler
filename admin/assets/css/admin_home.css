@@ -67,6 +67,13 @@
     bottom: -100%;
 }
 
+.analyze-result-window {
+    -webkit-transition:width 300ms ease-in-out, height 300ms ease-in-out;
+    -moz-transition:width 300ms ease-in-out, height 300ms ease-in-out;
+    -o-transition:width 300ms ease-in-out, height 300ms ease-in-out;
+    transition:width 300ms ease-in-out, height 300ms ease-in-out;
+}
+
 .slide-up {
     bottom: 0px !important;
 }
