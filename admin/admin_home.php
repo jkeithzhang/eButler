@@ -22,10 +22,10 @@ switch($option_name) {
 					break;
 	case 'web':			
 					$include_flag           =   true;
-                    $include_page			=	"web_library.php";		
+                    $include_page			=	"web_library_edit.php";		
 					$page_title				=	"Photo Wall";	
                     $web_types              =   $mainClassObj->getSchemaInfo($webTypes, "*", "", "", "", "", "");
-                    $recently_added         =   $mainClassObj->getSchemaInfo($webLib, "*", "", "uri", "created_at", "DESC", "");
+                    $recently_added         =   $mainClassObj->getSchemaInfo($webLib, "*", "", "uri", "created_at", "DESC", "4");
 					break;	
 	default:				
                     $include_flag           =   false;	

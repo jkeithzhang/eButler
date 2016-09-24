@@ -15,7 +15,6 @@ $weblibs = array();
 
 // An ugly blocks to handle "one to many" DB display
 foreach($weblibs_raw as $key => $value) {
-	// echo $value['note'];
 	if(!array_key_exists($value['note'], $weblibs)) {
 		$tempCategory = $value['category'];
 		unset($value['category']);
@@ -26,10 +25,9 @@ foreach($weblibs_raw as $key => $value) {
 		array_push($weblibs[$value['note']]['category'], $value['category']);
 	}
 }
-
 // echo json_encode($weblibs);
 ?>
-<nav class="navbar navbar-default navbar-static-top" style="border-bottom-width:0;background-color:#efefef;">
+<nav class="navbar navbar-default navbar-static-top" id="web_lib_nav">
 	<div class="col-md-8" style="padding-top: 10px">
 		<span style=" font-size: 25px;color: #ccc;margin:auto;font-family: Open Sans">Web Library</span>	
 	</div>
@@ -38,7 +36,7 @@ foreach($weblibs_raw as $key => $value) {
 <div class="container">
 	<div class="row">	
 		<div class="col-md-12">
-			<table class="table table-striped">
+			<table class="table">
 	  			<thead>
 	  				<tr>
 	  					<th>Name</th>
@@ -48,11 +46,11 @@ foreach($weblibs_raw as $key => $value) {
 	  			<tbody>
 	  				<?php
 					    foreach($weblibs as $key => $value) {
-					    	$output = "<tr><td><a href='". $value['uri'] . "' target='_blank'>" . $value['note'] . "</a></td><td>";
+					    	$output = "<tr><td><a href='". $value['uri'] . "' target='_blank'>" . $value['note'] . "</a></td><td><ul class='tags'>";
 					    	foreach($value['category'] as $key1 => $value1) {
-					    		$output = $output . "<span>" . $value1 . "	</span>";
+					    		$output = $output . "<li><span class='tag'>" . $value1 . "</span></li>";
 					    	}
-					    	$output = $output .  "</td></tr>";
+					    	$output = $output .  "</ul></td></tr>";
 					    	echo $output;
 					    }	  					
 	  				?>
