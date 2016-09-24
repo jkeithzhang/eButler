@@ -10,9 +10,24 @@ require "templates/web_lib_header.php";
 $webTypes = "web_types";
 $webLib = "web_library";
 
-$weblibs = $mainClassObj->getSchemaInfo($webLib, "*", "", "", "created_at", "", "");
+$weblibs_raw = $mainClassObj->getSchemaInfo($webLib, "*", "", "", "created_at", "", "");
+$weblibs = array();
 
-echo json_encode($weblibs);
+// An ugly blocks to handle "one to many" DB display
+foreach($weblibs_raw as $key => $value) {
+	// echo $value['note'];
+	if(!array_key_exists($value['note'], $weblibs)) {
+		$tempCategory = $value['category'];
+		unset($value['category']);
+		$value['category'] = array();
+		array_push($value['category'], $tempCategory);
+		$weblibs[$value['note']] = $value;
+	} else {
+		array_push($weblibs[$value['note']]['category'], $value['category']);
+	}
+}
+
+// echo json_encode($weblibs);
 ?>
 <nav class="navbar navbar-default navbar-static-top" style="border-bottom-width:0;background-color:#efefef;">
 	<div class="col-md-8" style="padding-top: 10px">
@@ -33,7 +48,12 @@ echo json_encode($weblibs);
 	  			<tbody>
 	  				<?php
 					    foreach($weblibs as $key => $value) {
-					    	echo "<tr><td><a href='". $value['uri'] . "' target='_blank'>" . $value['note'] . "</a></td><td>" . $value['created_at'] . "</td></tr>";
+					    	$output = "<tr><td><a href='". $value['uri'] . "' target='_blank'>" . $value['note'] . "</a></td><td>";
+					    	foreach($value['category'] as $key1 => $value1) {
+					    		$output = $output . "<span>" . $value1 . "	</span>";
+					    	}
+					    	$output = $output .  "</td></tr>";
+					    	echo $output;
 					    }	  					
 	  				?>
 	  			</tbody>

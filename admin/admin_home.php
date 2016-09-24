@@ -25,7 +25,7 @@ switch($option_name) {
                     $include_page			=	"web_library.php";		
 					$page_title				=	"Photo Wall";	
                     $web_types              =   $mainClassObj->getSchemaInfo($webTypes, "*", "", "", "", "", "");
-                    $recently_added         =   $mainClassObj->getSchemaInfo($webLib, "*", "", "", "", "", "");
+                    $recently_added         =   $mainClassObj->getSchemaInfo($webLib, "*", "", "uri", "created_at", "DESC", "");
 					break;	
 	default:				
                     $include_flag           =   false;	

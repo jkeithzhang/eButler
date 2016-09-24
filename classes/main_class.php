@@ -11,14 +11,11 @@ if (!defined('ERR_LOG_FILE'))
 	define("ERR_LOG_FILE", DOC_ROOT."err_log.txt");
 
 class dbClass {
-
 	 /**********************************************************************
 	 # FUNCTION TO INSERT INTO A SCHEMA
 	 **********************************************************************/
-	 public function insertSchema($schemaName, $fieldsList, $valuesList)
-	 {
-		try
-		{ 
+	 public function insertSchema($schemaName, $fieldsList, $valuesList) {
+		try { 
 			global $pdoConObj;
 
 			$queryString	=	"";
@@ -32,9 +29,7 @@ class dbClass {
 			$insertStatement=	$pdoConObj->prepare($insertQry);
 			$insertStatement->execute();
 			$insertedID	   .=	$pdoConObj->lastInsertId();
-		}
-		catch(PDOException $e)
-		{
+		} catch(PDOException $e) {
 			$errorMessage	.= "\n***************************************";
 			$errorMessage	.=  "\n Error Date :".date("M-j-Y D, h:i:s A");
 			$errorMessage	.=	"\n Error While executing  INSERT Query Over :".$schemaName;
@@ -44,7 +39,7 @@ class dbClass {
 			$errorMessage	.=	"\n FILE :".$e->getFile();
 			$errorMessage	.=	"\n LINE :".$e->getLine();
 			
-			$logObj->printLog($errorMessage);
+			logClass::printLog($errorMessage);			
 			//error_log($errorMessage, 3, ERR_LOG_FILE);
 		}
 		
@@ -59,9 +54,8 @@ class dbClass {
 	 # FUNCTION TO RETRIEVE INFORMATION FROM A SCHEMA
 	**********************************************************************/
 	public function getSchemaInfo($schemaName, $columnsList, $whereCondition, $groupByField, $orderByField, $sortDirection, $limit) {
-		try { 
+		try {
 				global $pdoConObj;
-		
 				$queryString	=	"";				
 				$resultCount	=	"";
 				$schemaPrefix	=	"tbl_";				
@@ -87,7 +81,7 @@ class dbClass {
 				$preparedStatement->execute();
 				
 				$resultCount	=	$preparedStatement->rowCount();
-		} catch(PDOException $e) { 
+		} catch(Exception $e) { 
 			$errorMessage	=	"";
 			$errorMessage	.= "\n***************************************";
 			$errorMessage	.=  "\n Error Date :".date("M-j-Y D, h:i:s A");
@@ -98,8 +92,7 @@ class dbClass {
 			$errorMessage	.=	"\n FILE :".$e->getFile();
 			$errorMessage	.=	"\n LINE :".$e->getLine();
 
-			$logObj->printLog($errorMessage);
-			//error_log($errorMessage, 3, ERR_LOG_FILE);
+			logClass::printLog($errorMessage);
 		}
 
 		if($resultCount) {
