@@ -23,13 +23,13 @@
 			    	</tbody>
 				</table>    					
 			</div>
-			<a name="web_lib_edit"></a>
+			<a name="photo_wall_edit"></a>
 			<a class="btn btn-success" id="testiframe">Go to Inventory</a>
 		</div>
 		<div class="col-md-6 col-sm-6 col-xs-6" id="web_div_right">
 			<form method="post" id="web_form">
 				<div class="form-group">
-			    	<label>URI</label>
+			    	<label>Name</label>
 			    	<input class="form-control" name="uri" id="uri" placeholder="Copy the link to here" required>
 			  	</div>
 				<div class="form-group">
@@ -51,13 +51,3 @@
 		</div>
 	</div>
 </div>
-
-
-
-
-
-
-
-
-
-

@@ -17,7 +17,7 @@ $webLib = "web_library";
 switch($option_name) {
 	case 'photo':			
 					$include_flag           =   true;
-                    $include_page			=   "photo_wall.php";		
+                    $include_page			=   "photo_wall_edit.php";		
 					$page_title				=	"Photo Wall";			
 					break;
 	case 'web':			
@@ -47,7 +47,7 @@ switch($option_name) {
     			<div class="ribbon-wrapper-green">
     				<div class="ribbon-green" id="test">NEWS</div>
     			</div>
-    			<p>This year’s Adult Christmas Party will be held on the evening of Saturday, December 3rd at Algonquin College (same venue as last year).  For the past 5 years, the Christmas Party format has been a dinner followed by a comedy show.</p>
+			<p>This year’s Adult Christmas Party will be held on the evening of Saturday, December 3rd at Algonquin College (same venue as last year).  For the past 5 years, the Christmas Party format has been a dinner followed by a comedy show.</p>
     		</div>
     	</div>
     	<div class="col-md-4 col-sm-4 col-xs-4">
@@ -65,35 +65,35 @@ switch($option_name) {
     </div>
   	<div class="row">
     	<div class="col-md-3 col-sm-6 col-xs-12">
-    		<div class="main-component" >
+    		<div class="main-component" style="background-color: crimson">
     			<a href="admin_finance.php">
     				<img src="assets/img/linechart.png" alt="Finance"/>
     			</a>
     		</div>
     	</div>
     	<div class="col-md-3 col-sm-6 col-xs-12">
-    		<div class="main-component" >
-    			<a href="admin_home.php?option=photo">
+    		<div class="main-component" style="background-color: dodgerblue;">
+    			<a  id="to_photo_wall_edit" href="admin_home.php?option=photo">
     				<img src="assets/img/gallery.png" alt="Photo"/>
     			</a>
     		</div>
     	</div>
     	<div class="col-md-3 col-sm-6 col-xs-12">
-    		<div class="main-component" >
+    		<div class="main-component" style="background-color: coral;">
     			<a href="admin_home.php?option=note">
     				<img src="assets/img/note.png" alt="Notes"/>
     			</a>
     		</div>
     	</div>
     	<div class="col-md-3 col-sm-6 col-xs-12">
-    		<div class="main-component" >
+    		<div class="main-component" style="background-color: lightslategrey;">
     			<a id="to_webform" href="admin_home.php?option=web">
     				<img src="assets/img/web.png" alt="Userful Links"/>
     			</a>	
     		</div>
     	</div>
     	<div class="col-md-3 col-sm-6 col-xs-12">
-    		<div class="main-component" >
+    		<div class="main-component" style="background-color: mediumseagreen;">
     			<a href="admin_home.php?option=password">
     				<img src="assets/img/password.png" alt="Keychain"/>
     			</a>

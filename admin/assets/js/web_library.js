@@ -11,7 +11,11 @@ $(document).ready(function() {
 	});
 
 	$("#to_webform").click(function() {
-	   scrollToAnchor('id3');
+	   scrollToAnchor('web_lib_edit');
+	});
+
+	$("#to_photo_wall_edit").click(function() {
+	   scrollToAnchor('photo_wall_edit');
 	});
 
 	$('#web_category_select').select2();
