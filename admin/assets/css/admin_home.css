@@ -49,10 +49,13 @@ body {
   box-shadow:         8px 8px 8px 0px rgba(0,0,0,0.5);
 }
 #main_component_guide {
-    margin-top: 3em;
-    margin-bottom: 0em;
+  margin-top: 3em;
+  margin-bottom: 0em;
 }
-
+.main-component-description {
+  color: #fff;
+  text-align: center;
+}
 
 /******************* Flashy NEWS Robbin **********************/
 .news:hover #test {
