@@ -38,7 +38,7 @@ body {
   margin-top: auto;
   margin-bottom: auto;
   height: 90%;
-    width: 70%;
+  width: 70%;
 }
 .main-component:hover {
   transition: 0.5s;
@@ -138,6 +138,31 @@ body {
     bottom: -475px !important;
 }
 /********************** Web Form End *************************/
+
+/********************** Dashboard Start *************************/
+#dashboard-user-name {
+  border-right:1px solid #fff;
+  min-height:150px;
+  margin-top:1em;
+  margin-bottom:1em;
+  text-align:center;
+}
+#dashboard-user-name p{
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 1.5em;
+  color:#4d4d4d;
+}
+.glyphicon-user {
+  font-size:6em;
+  cursor:pointer;
+  color:#4d4d4d;
+}
+
+hr {
+  border-color: white;
+}
+/********************** Dashboard End *************************/
+
 /******************* Corner Ribbon **********************/
 /*https://css-tricks.com/snippets/css/corner-ribbon/*/
 .wrapper {
