@@ -91,7 +91,7 @@ switch($option_name) {
                 <div class="ribbon-wrapper-green">
                     <div class="ribbon-green" id="test">NEWS</div>
                 </div>
-            <p>This year</p>
+            <p>CentOS version on the current GitLab server is 6.6.</p>
             </div>
     	</div>
   	</div>

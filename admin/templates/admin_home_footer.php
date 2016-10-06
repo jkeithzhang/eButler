@@ -11,5 +11,7 @@
     <script src="assets/js/jquery.md5.js" type="text/javascript"></script>
     <script src="assets/js/select2.min.js" type="text/javascript"></script>
     <script src="assets/js/web_library.js" type="text/javascript"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
   </body>
 </html>
