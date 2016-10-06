@@ -102,7 +102,7 @@ switch($option_name) {
 
     <div class="analyze-result row">
         <iframe src="" class="col-xs-12 analyze-result-window"></iframe>
-        <span class="glyphicon glyphicon-chevron-down analyze-close" aria-hidden="true" style="position: absoluright: 50px; top: 20px; font-size: 30px; cursor: pointer;"></span>
+        <span class="glyphicon glyphicon-chevron-down analyze-close" aria-hidden="true" style="position: absolute;right: 50px; top: 20px; font-size: 30px; cursor: pointer;"></span>
     </div>
 </div>
 <!-- CONTENT-WRAPPER SECTION END-->
