@@ -95,15 +95,15 @@ switch($option_name) {
             </div>
     	</div>
   	</div>
-</div>
 
-<?php
-    require "partials/".$include_page;
-?>
+    <?php
+        require "partials/".$include_page;
+    ?>
 
-<div class="analyze-result row">
-    <iframe src="" class="col-xs-12 analyze-result-window"></iframe>
-    <span class="glyphicon glyphicon-chevron-down analyze-close" aria-hidden="true" style="position: absoluright: 50px; top: 20px; font-size: 30px; cursor: pointer;"></span>
+    <div class="analyze-result row">
+        <iframe src="" class="col-xs-12 analyze-result-window"></iframe>
+        <span class="glyphicon glyphicon-chevron-down analyze-close" aria-hidden="true" style="position: absoluright: 50px; top: 20px; font-size: 30px; cursor: pointer;"></span>
+    </div>
 </div>
 <!-- CONTENT-WRAPPER SECTION END-->
 <?php require "templates/admin_home_footer.php"; ?>
