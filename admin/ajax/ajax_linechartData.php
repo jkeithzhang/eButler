@@ -1,6 +1,6 @@
 <?php
 ####################################################################
-#	File Name	:	ajax_webSubmit.php
+#	File Name	:	ajax_linechartData.php
 #	Location	: 	WEBROOT/admin/ajax
 ####################################################################
 //error_reporting(E_ALL);
@@ -19,24 +19,24 @@ $logObj = new logClass();
 $mainClassObj =	new dbClass();
 
 session_start();
-$todayDBDateTime =	date("Y-m-d H:i:s");
+$table = "finance_today";
 
-$web_table = "web_library";
-$web_table_fields = "uri, category, note, created_at";
-// echo json_encode(json_encode($_POST));
+$result_raw = $mainClassObj->getSchemaInfo($table, "*", "", "", "id", "", "");
+// $logObj->printLog(json_encode($result_raw));
 
-if(isset($_POST['uri'])) {
-	$uri			=	$_POST['uri'];
-	$note			=	$_POST['note'];
-	$categories		=	$_POST['webCategories'];
-	
-	foreach($_POST['webCategories'] as $key => $value) {
-		$value_list = "'".$_POST['uri']."', '".$value."', '".$_POST['note']."', now()";
-		$mainClassObj->insertSchema($web_table, $web_table_fields, $value_list);
+foreach($weblibs_raw as $key => $value) {
+	if(!array_key_exists($value['note'], $weblibs)) {
+		$tempCategory = $value['category'];
+		unset($value['category']);
+		$value['category'] = array();
+		array_push($value['category'], $tempCategory);
+		$weblibs[$value['note']] = $value;
+	} else {
+		array_push($weblibs[$value['note']]['category'], $value['category']);
 	}
-
-	echo "SUCCESS";
-
 }
 
+
+
+echo json_encode($result_raw);
 ?>

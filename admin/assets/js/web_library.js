@@ -1,6 +1,12 @@
 $(function () {
-    $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=usdeur.json&callback=?', function (data) {
-
+    $.getJSON('ajax/ajax_linechartData.php', function(rawData) {
+    	var data = new Array();
+    	rawData.forEach(function(item, index) {
+    		var temp = [];
+    		temp[0] = Date.UTC(item['year'], parseInt(item['month'])+1, item['day']);
+    		temp[1] = parseInt(item['total']);
+    		data.push(temp);
+    	})
         $('#dashboard-linechart').highcharts({
             chart: {
                 zoomType: 'x'
@@ -52,7 +58,7 @@ $(function () {
 
             series: [{
                 type: 'area',
-                name: 'USD to EUR',
+                name: 'Total',
                 data: data
             }],
               credits: {
