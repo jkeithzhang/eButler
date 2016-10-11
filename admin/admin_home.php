@@ -19,6 +19,10 @@ switch($option_name) {
                     $include_page			=   "photo_wall_edit.php";		
 					$page_title				=	"Photo Wall";			
 					break;
+    case 'finance':           
+                    $include_page           =   "finance_edit.php";      
+                    $page_title             =   "My Finance";           
+                    break;
 	case 'web':			
                     $include_page			=	"web_library_edit.php";		
 					$page_title				=	"Web Lib";	
@@ -43,7 +47,7 @@ switch($option_name) {
 	<div class="row">
         <div class="col-md-2 col-sm-6 col-xs-6">
             <div class="main-component" style="background-color: crimson">
-                <a href="admin_finance.php">
+                <a href="admin_home.php?option=finance">
                     <img src="assets/img/linechart.png" alt="Finance"/>
                 </a>
                 <hr/>
@@ -95,15 +99,13 @@ switch($option_name) {
             </div>
     	</div>
   	</div>
-
-    <?php
-        require "partials/".$include_page;
-    ?>
-
     <div class="analyze-result row">
         <iframe src="" class="col-xs-12 analyze-result-window"></iframe>
         <span class="glyphicon glyphicon-chevron-down analyze-close" aria-hidden="true" style="position: absolute;right: 50px; top: 20px; font-size: 30px; cursor: pointer;"></span>
     </div>
+    <?php
+        require "partials/".$include_page;
+    ?>
 </div>
 <!-- CONTENT-WRAPPER SECTION END-->
 <?php require "templates/admin_home_footer.php"; ?>

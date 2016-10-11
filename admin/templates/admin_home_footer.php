@@ -10,8 +10,11 @@
     <script src="assets/js/bootbox.js" type="text/javascript"></script>
     <script src="assets/js/jquery.md5.js" type="text/javascript"></script>
     <script src="assets/js/select2.min.js" type="text/javascript"></script>
+    <!-- move to weblib later -->
     <script src="assets/js/web_library.js" type="text/javascript"></script>
-	<script src="https://code.highcharts.com/highcharts.js"></script>
-	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="assets/js/finance_edit.js" type="text/javascript"></script>
+	<script src="assets/js/highcharts.js"></script>
+	<script src="assets/js/exporting.js"></script>
+    <script src="assets/js/admin_home_dashboard.js" type="text/javascript"></script>
   </body>
 </html>
