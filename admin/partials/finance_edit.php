@@ -4,9 +4,8 @@
 		<div class="loader"></div>
 	</div>
 </div>
-<!-- partial css -->
+<!-- partial js, css -->
 <link rel="stylesheet" href="assets/css/finance_edit.css" type="text/css"/>
-
 
 
 

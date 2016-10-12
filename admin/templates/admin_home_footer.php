@@ -10,11 +10,13 @@
     <script src="assets/js/bootbox.js" type="text/javascript"></script>
     <script src="assets/js/jquery.md5.js" type="text/javascript"></script>
     <script src="assets/js/select2.min.js" type="text/javascript"></script>
+    <script src="http://arshaw.com/js/fullcalendar-1.6.4/fullcalendar/fullcalendar.min.js"></script>
+    <script src="assets/js/highcharts.js"></script>
+    <script src="assets/js/exporting.js"></script>
     <!-- move to weblib later -->
     <script src="assets/js/web_library.js" type="text/javascript"></script>
     <script src="assets/js/finance_edit.js" type="text/javascript"></script>
-	<script src="assets/js/highcharts.js"></script>
-	<script src="assets/js/exporting.js"></script>
     <script src="assets/js/admin_home_dashboard.js" type="text/javascript"></script>
+
   </body>
 </html>
