@@ -1,4 +1,5 @@
 <?php
+use Ke\Toolkit as fli;
 ####################################################################
 #	File Name	:	admin_home_header.php
 #	Location	:	/WEBROOT/admin/templates/
@@ -21,10 +22,10 @@ require ("../classes/main_class.php");
 // placeholder for MAIL TEMPLATES
 
 // DB connect:
-$dbObj = new dbConnect;
+$dbObj = new dbConnect();
 $connect = $dbObj->connectDB();
 $mainClassObj =	new dbClass();
-$logObj = new logClass();
+$logObj = new fli\logClass();
 
 $now = time();
 
@@ -49,6 +50,8 @@ if(!isset($_SESSION['EBUTLER']) || $now > $_SESSION['EBUTLER']['DISCARD_AFTER'])
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css" />
 	<link rel="stylesheet" href="assets/css/admin_home.css" type="text/css" />
 	<link rel="stylesheet" href="assets/css/select2.min.css" type="text/css" />
+	<link rel="stylesheet" href="assets/css/fullcalendar.css" type="text/css" />
+	<link rel="stylesheet" href="assets/css/fullcalendar.print.css" media="print" type="text/css" />
 </head>
 <body>
 <!-- HEADER END-->

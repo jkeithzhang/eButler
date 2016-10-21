@@ -65,6 +65,3 @@ class dbConnect extends cdBConfig implements dbConfig {
 	}
 
 }
-
-
-?>

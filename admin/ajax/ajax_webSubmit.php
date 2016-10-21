@@ -1,4 +1,5 @@
 <?php
+use Ke\Toolkit as fli;
 ####################################################################
 #	File Name	:	ajax_webSubmit.php
 #	Location	: 	WEBROOT/admin/ajax
@@ -15,7 +16,7 @@ require ("../../classes/main_class.php");
 $dbObj = new dbConnect;
 $connect = $dbObj->connectDB();
 global $pdoConObj;
-$logObj = new logClass();
+$logObj = new fli\logClass();
 $mainClassObj =	new dbClass();
 
 session_start();

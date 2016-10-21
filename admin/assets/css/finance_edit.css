@@ -1,5 +1,5 @@
 #finance_calendar_div {
-  background-color: #ffffff;
+  background-color: #fff;
   margin-top: 50px;
   margin-bottom: 50px;
 }
@@ -516,4 +516,6 @@ table.fc-border-separate {
   text-align: center;
   cursor: s-resize;
   }
-  
+.fc-time{
+   display : none;
+}

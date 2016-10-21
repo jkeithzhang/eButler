@@ -10,7 +10,8 @@
     <script src="assets/js/bootbox.js" type="text/javascript"></script>
     <script src="assets/js/jquery.md5.js" type="text/javascript"></script>
     <script src="assets/js/select2.min.js" type="text/javascript"></script>
-    <script src="http://arshaw.com/js/fullcalendar-1.6.4/fullcalendar/fullcalendar.min.js"></script>
+    <script src="http://momentjs.com/downloads/moment.min.js"></script>
+    <script src="assets/js/fullcalendar.min.js"></script>
     <script src="assets/js/highcharts.js"></script>
     <script src="assets/js/exporting.js"></script>
     <!-- move to weblib later -->

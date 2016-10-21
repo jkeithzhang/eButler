@@ -1,4 +1,5 @@
 <?php
+namespace Ke\Toolkit;
 ####################################################################
 #	File Name	:	log_class.php
 #	Location	: 	WEBROOT/classes/

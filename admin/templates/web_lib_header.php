@@ -1,4 +1,5 @@
 <?php
+use Ke\Toolkit as fli;
 ####################################################################
 #	File Name	:	web_lib_header.php
 #	Location	:	/WEBROOT/admin/templates/
@@ -24,7 +25,7 @@ require ("../classes/main_class.php");
 $dbObj = new dbConnect;
 $connect = $dbObj->connectDB();
 $mainClassObj =	new dbClass();
-$logObj = new logClass();
+$logObj = new fli\logClass();
 
 $now = time();
 

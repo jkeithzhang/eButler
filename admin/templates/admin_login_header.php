@@ -1,4 +1,5 @@
 <?php
+use Ke\Toolkit as fli;
 ####################################################################
 #	File Name	:	admin_login_header.php
 #	Location	:	/WEBROOT/admin/templates/
@@ -21,9 +22,9 @@ require ("../classes/main_class.php");
 // placeholder for MAIL TEMPLATES
 
 // DB connect:
-$dbObj = new dbConnect;
+$dbObj = new dbConnect();
 $connect = $dbObj->connectDB();
-$logObj = new logClass();
+$logObj = new fli\logClass();
 
 $now = time();
 if(isset($_SESSION['EBUTLER'])) {
